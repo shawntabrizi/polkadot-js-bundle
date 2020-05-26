@@ -1,0 +1,31 @@
+{
+    "name": "polkadot-js-bundle",
+    "version": "1.16.1",
+    "description": "A standalone bundle of the Polkadot{JS} libraries.",
+    "main": "index.js",
+    "scripts": {
+        "build": "browserify index.js > polkadot.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shawntabrizi/polkadot-js-bundle.git"
+    },
+    "keywords": [
+        "polkadot",
+        "substrate",
+        "blockchain"
+    ],
+    "author": "Shawn Tabrizi",
+    "license": "Apache 2.0",
+    "bugs": {
+        "url": "https://github.com/shawntabrizi/polkadot-js-bundle/issues"
+    },
+    "homepage": "https://github.com/shawntabrizi/polkadot-js-bundle#readme",
+    "dependencies": {
+        "@polkadot/api": "^1.16.1",
+        "@polkadot/keyring": "^2.11.1",
+        "@polkadot/util": "^2.11.1",
+        "@polkadot/util-crypto": "^2.11.1"
+    }
+}
