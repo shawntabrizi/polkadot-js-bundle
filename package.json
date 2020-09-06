@@ -1,6 +1,6 @@
 {
     "name": "polkadot-js-bundle",
-    "version": "1.26.2",
+    "version": "1.31.2",
     "description": "A standalone bundle of the Polkadot{JS} libraries.",
     "main": "index.js",
     "scripts": {
@@ -23,10 +23,10 @@
     },
     "homepage": "https://github.com/shawntabrizi/polkadot-js-bundle#readme",
     "dependencies": {
-        "@polkadot/api": "^1.26.1",
-        "@polkadot/keyring": "^3.0.1",
-        "@polkadot/types": "^1.26.1",
-        "@polkadot/util": "^3.0.1",
-        "@polkadot/util-crypto": "^3.0.1"
+        "@polkadot/api": "^1.31.2",
+        "@polkadot/keyring": "^3.4.1",
+        "@polkadot/types": "^1.31.2",
+        "@polkadot/util": "^3.4.1",
+        "@polkadot/util-crypto": "^3.4.1"
     }
 }

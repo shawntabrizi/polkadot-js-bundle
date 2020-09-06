@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Test Page for Polkadot JS Bundle</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!-- Custom styles for this template -->
+	<style>
+		/* Sticky footer styles
+		-------------------------------------------------- */
+		html {
+			position: relative;
+			min-height: 100%;
+		}
+		body {
+			margin-bottom: 60px; /* Margin bottom by footer height */
+		}
+		.footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 60px; /* Set the fixed height of the footer here */
+			line-height: 60px; /* Vertically center the text there */
+			background-color: #f5f5f5;
+		}
+
+		/* Custom page CSS
+		-------------------------------------------------- */
+		/* Not required for template or sticky footer method. */
+
+		.container {
+			width: auto;
+			max-width: 680px;
+			padding: 0 15px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Begin page content -->
+	<main role="main" class="container">
+		<h1 class="mt-5">Test Page for Polkadot JS Bundle</h1>
+		<p class="lead">This page simply tests that the included <code>polkadot.js</code> bundle is working.</p>
+		<p>Polkadot Block: <span id="polkadot-block">Not Connected</span></p>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<span class="text-center text-muted">Created by <a href="http://shawntabrizi.com">Shawn Tabrizi</a> - Source on <a
+					href="https://github.com/shawntabrizi/polkadot-js-bundle">GitHub</a> - <a
+					href="http://shawntabrizi.com/substrate/porting-web3-js-to-polkadot-js/">Blog Post</a> - Using <a
+					href="https://github.com/polkadot-js/api/">Polkadot.js</a>
+			</span>
+		</div>
+	</footer>
+
+	<script src="polkadot.js"></script>
+	<script>
+		async function testConnect() {
+			let { WsProvider, ApiPromise } = api;
+			const wsProvider = new WsProvider('wss://rpc.polkadot.io');
+			const polkadot = await ApiPromise.create({ provider: wsProvider });
+
+			let polkadotBlock = document.getElementById("polkadot-block");
+
+			polkadot.derive.chain.subscribeNewHeads((header) => {
+				polkadotBlock.innerText = header.number;
+			});
+		}
+
+		testConnect();
+	</script>
+</body>
+
+</html>
