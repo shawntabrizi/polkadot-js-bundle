@@ -50,6 +50,7 @@
 		<h1 class="mt-5">Test Page for Polkadot JS Bundle</h1>
 		<p class="lead">This page simply tests that the included <code>polkadot.js</code> bundle is working.</p>
 		<p></p><code id="code"></code></p>
+		<p id="version"></p>
 		<p>Polkadot Block: <span id="polkadot-block">Not Connected</span></p>
 	</main>
 
@@ -70,6 +71,7 @@
 			const wsProvider = new WsProvider('wss://rpc.polkadot.io');
 			const polkadot = await ApiPromise.create({ provider: wsProvider });
 
+			document.getElementById("version").innerText = polkadot.libraryInfo;
 			let polkadotBlock = document.getElementById("polkadot-block");
 
 			polkadot.derive.chain.subscribeNewHeads((header) => {
