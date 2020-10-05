@@ -49,6 +49,7 @@
 	<main role="main" class="container">
 		<h1 class="mt-5">Test Page for Polkadot JS Bundle</h1>
 		<p class="lead">This page simply tests that the included <code>polkadot.js</code> bundle is working.</p>
+		<p></p><code id="code"></code></p>
 		<p>Polkadot Block: <span id="polkadot-block">Not Connected</span></p>
 	</main>
 
@@ -77,6 +78,8 @@
 		}
 
 		testConnect();
+
+		document.getElementById("code").innerText = testConnect.toString()
 	</script>
 </body>
 
