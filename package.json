@@ -4,7 +4,7 @@
     "description": "A standalone bundle of the Polkadot{JS} libraries.",
     "main": "index.js",
     "scripts": {
-        "build": "browserify index.js -o polkadot.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]",
+        "build": "browserify index.js -p esmify > polkadot.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -30,10 +30,7 @@
         "@polkadot/util-crypto": "^6.7.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.14.5",
-        "@babel/preset-env": "^7.14.5",
-        "@babel/preset-react": "^7.14.5",
-        "babelify": "^10.0.0",
-        "browserify": "^17.0.0"
+        "browserify": "^17.0.0",
+        "esmify": "^2.1.1"
     }
 }
