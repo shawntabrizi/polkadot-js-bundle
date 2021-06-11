@@ -1,6 +1,6 @@
 {
     "name": "polkadot-js-bundle",
-    "version": "3.8.1",
+    "version": "4.13.1",
     "description": "A standalone bundle of the Polkadot{JS} libraries.",
     "main": "index.js",
     "scripts": {
