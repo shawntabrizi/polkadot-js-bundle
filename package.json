@@ -1,6 +1,6 @@
 {
     "name": "polkadot-js-bundle",
-    "version": "4.15.1",
+    "version": "6.5.1",
     "description": "A standalone bundle of the Polkadot{JS} libraries.",
     "main": "index.js",
     "scripts": {
@@ -23,11 +23,11 @@
     },
     "homepage": "https://github.com/shawntabrizi/polkadot-js-bundle#readme",
     "dependencies": {
-        "@polkadot/api": "^4.15.1",
-        "@polkadot/keyring": "^6.9.1",
-        "@polkadot/types": "^4.15.1",
-        "@polkadot/util": "^6.9.1",
-        "@polkadot/util-crypto": "^6.9.1"
+        "@polkadot/api": "^6.5.1",
+        "@polkadot/keyring": "^7.6.1",
+        "@polkadot/types": "^6.5.1",
+        "@polkadot/util": "^7.6.1",
+        "@polkadot/util-crypto": "^7.6.1"
     },
     "devDependencies": {
         "browserify": "^17.0.0",
