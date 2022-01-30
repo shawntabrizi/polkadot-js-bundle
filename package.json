@@ -1,10 +1,7 @@
 {
     "name": "polkadot-js-bundle",
-    "version": "7.5.2",
+    "version": "7.5.3",
     "description": "A standalone bundle of the Polkadot{JS} libraries.",
-    "files": [
-        "dist/*.js"
-    ],
     "scripts": {
         "build": "webpack --mode=production"
     },
