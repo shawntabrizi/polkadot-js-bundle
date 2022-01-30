@@ -1,7 +1,9 @@
 # polkadot-js-bundle
 
-This project use to create JS bundles for the [Polkadot JS APIs](https://github.com/polkadot-js/).
+This project was used to create JS bundles for the [Polkadot JS APIs](https://github.com/polkadot-js/).
+
 Polkadot{JS} [now supports official JS bundles](https://polkadot.js.org/docs/usage/FAQ/#i-would-like-to-use-browser-bundles-bypassing-the-compile-step), so this project is mostly deprecated.
+
 This page just serves to show how you can use them.
 
 Include the official Polkadot JS Bundles like so:
