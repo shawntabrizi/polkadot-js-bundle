@@ -53,7 +53,7 @@
 	<!-- Begin page content -->
 	<main role="main" class="container">
 		<h1 class="mt-5">Test Page for Polkadot JS Bundle</h1>
-		<p class="lead">This page simply tests that the included <code>polkadot.js</code> bundle is working.</p>
+		<p class="lead">This page simply tests that the <code>polkadot{JS}</code> bundles are working.</p>
 		<p></p><code id="code"></code></p>
 		<p id="version"></p>
 		<p>Polkadot Block: <span id="polkadot-block">Not Connected</span></p>
@@ -69,10 +69,14 @@
 		</div>
 	</footer>
 
-	<script src="polkadot.js"></script>
+	<script src="//unpkg.com/@polkadot/util/bundle-polkadot-util.js"></script>
+	<script src="//unpkg.com/@polkadot/util-crypto/bundle-polkadot-util-crypto.js"></script>
+	<script src="//unpkg.com/@polkadot/types/bundle-polkadot-types.js"></script>
+	<script src="//unpkg.com/@polkadot/api/bundle-polkadot-api.js"></script>
+
 	<script>
 		async function testConnect() {
-			let { WsProvider, ApiPromise } = api;
+			const { WsProvider, ApiPromise } = polkadotApi;
 			const wsProvider = new WsProvider('wss://rpc.polkadot.io');
 			const polkadot = await ApiPromise.create({ provider: wsProvider });
 
