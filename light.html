@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>Test Page for Polkadot JS Bundle</title>
+	<title>Test Page for Polkadot JS Bundle with Light Client</title>
 
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -53,9 +53,10 @@
 
 	<!-- Begin page content -->
 	<main role="main" class="container">
-		<h1 class="mt-5">Test Page for Polkadot JS Bundle</h1>
-		<p class="lead">This page simply tests that the <code>polkadot{JS}</code> bundles are working.</p>
-		<p class="lead">Switch to a <a href="./light.html">light client.</a></p>
+		<h1 class="mt-5">Test Page for Polkadot JS Bundle with Light Client</h1>
+		<p class="lead">This page simply tests that the <code>polkadot{JS}</code> bundles are working with a light
+			client.</p>
+		<p class="lead">Swith to a <a href="./index.html">regular RPC node.</a></p>
 		<p></p><code id="code"></code></p>
 		<p id="version"></p>
 		<p>Polkadot Block: <span id="polkadot-block">Not Connected</span></p>
@@ -78,15 +79,18 @@
 
 	<script>
 		async function testConnect() {
-			const { WsProvider, ApiPromise } = polkadotApi;
-			const wsProvider = new WsProvider('wss://rpc.polkadot.io');
-			const polkadot = await ApiPromise.create({ provider: wsProvider });
+			const { ApiPromise, ScProvider } = polkadotApi;
+			const { WellKnownChain } = ScProvider;
 
-			document.getElementById("version").innerText = polkadot.libraryInfo;
-			let polkadotBlock = document.getElementById("polkadot-block");
+			const provider = new ScProvider(WellKnownChain.polkadot);
+			provider.connect()
+			const polkadotLight = await ApiPromise.create({ provider });
 
-			polkadot.derive.chain.subscribeNewHeads((header) => {
-				polkadotBlock.innerText = header.number;
+			document.getElementById("version").innerText = polkadotLight.libraryInfo;
+			let polkadotLightBlock = document.getElementById("polkadot-block");
+
+			polkadotLight.derive.chain.subscribeNewHeads((header) => {
+				polkadotLightBlock.innerText = header.number;
 			});
 		}
 
